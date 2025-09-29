@@ -146,10 +146,7 @@ Scan completed by: Ibtissem Benmessaoud | ESTIN M2 Cybersecurite`,
 
   "cat flag.txt": `FLAG DISCOVERED!
 
-|  ___| |      / \  / ___|
-| |_  | |     / _ \| |  _ 
-|  _| | |___ / ___ \ |_| |
-|_|   |_____/_/   \_\____|
+
 
 
 FLAG: flag{HACK_THE_PORTFOLIO_2025_IBTISSEM_ROCKS}
@@ -320,7 +317,7 @@ Type 'help' to see available commands or start exploring!
           </div>
 
           <div className="mt-4 text-xs text-muted-foreground">
-            <p>💡 Pro tip: Try 'nmap scan', 'mitre --matrix', 'cat flag.txt', or 'sudo su' for special features!</p>
+            <p>💡 Pro tip: Try 'nmap scan', 'cat flag.txt', or 'sudo su' for special features!</p>
           </div>
         </div>
       </Card>
