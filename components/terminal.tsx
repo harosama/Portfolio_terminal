@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { Card } from "@/components/ui/card"
 
-const COMMANDS = {
+const COMMANDS: { [key: string]: string } = {
   help: `Available commands:
 help              Show this help message
 whoami            Display user information
@@ -200,15 +200,16 @@ Type 'help' to see available commands or start exploring!
   ])
   const [currentInput, setCurrentInput] = useState("")
   const [isTyping, setIsTyping] = useState(false)
-  const terminalRef = useRef(null)
-  const inputRef = useRef(null)
+  const terminalRef = useRef<HTMLDivElement | null>(null)
+
+  const inputRef = useRef<HTMLInputElement | null>(null)
 
   useEffect(() => {
     if (terminalRef.current) {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight
     }
   }, [lines])
-
+  
   useEffect(() => {
     const handleClick = () => {
       inputRef.current?.focus()
@@ -217,7 +218,8 @@ Type 'help' to see available commands or start exploring!
     return () => document.removeEventListener("click", handleClick)
   }, [])
 
-  const typeText = async (text, delay = 15) => {
+  const typeText = async (text: string, delay: number = 15) => {
+
     setIsTyping(true)
     const chars = text.split("")
     let currentText = ""
@@ -230,7 +232,7 @@ Type 'help' to see available commands or start exploring!
     setIsTyping(false)
   }
 
-  const executeCommand = async (command) => {
+  const executeCommand = async (command: string) => {
     const trimmedCommand = command.trim().toLowerCase()
 
     // Add command to history
@@ -265,7 +267,7 @@ Type 'help' to see available commands or start exploring!
     }
   }
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && !isTyping) {
       executeCommand(currentInput)
       setCurrentInput("")
