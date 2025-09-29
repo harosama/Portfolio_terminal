@@ -189,7 +189,6 @@ export default function Terminal() {
       content: `Welcome to Ibtissem's Portfolio Terminal v1.0.0
 
 Cybersecurity Engineer | CTF Player
-ESTIN M2 Cybersecurite 
 
 Type 'help' to see available commands or start exploring!
 `,
