@@ -317,7 +317,7 @@ Type 'help' to see available commands or start exploring!
           </div>
 
           <div className="mt-4 text-xs text-muted-foreground">
-            <p>💡 Pro tip: Try 'nmap scan', 'cat flag.txt', or 'sudo su' for special features!</p>
+            <p>💡 Pro tip: Try 'nmap scan', or 'sudo su' for special features!</p>
           </div>
         </div>
       </Card>
